@@ -18,7 +18,7 @@
   <body>
     <nav class="navbar navbar-expand bg-dark">
       <div class="container-fluid">
-        <a href="#" class="navbar-brand text-light">Laravel CRUD</a>
+        <a href="/" class="navbar-brand text-light">Laravel CRUD</a>
       </div>
     </nav>
     <div class="container mt-5">

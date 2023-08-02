@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fruits;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Redirect;
 
 class FruitController extends Controller
 {
@@ -26,7 +27,7 @@ class FruitController extends Controller
         $fruit=new Fruits;
         $fruit->name=$request->name;
         $fruit->save();
-        return back()->withSuccess('Fruit Added');
+        return Redirect::to('/')->withSuccess('Fruit Added');
     }
 
     public function edit($id){
@@ -41,7 +42,7 @@ class FruitController extends Controller
         $fruit=Fruits::where('id',$id)->first();
         $fruit->name=$request->name;
         $fruit->save();
-        return back()->withSuccess('Fruit Updated');
+        return Redirect::to('/')->withSuccess('Fruit Updated');
     }
 
     public function destroy($id){
