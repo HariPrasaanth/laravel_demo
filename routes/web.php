@@ -13,3 +13,4 @@ Route::post('fruits/store', [FruitController::class, 'store']);
 Route::get('fruits/edit/{id}', [FruitController::class, 'edit']);
 Route::put('fruits/update/{id}',[FruitController::class, 'update']);
 Route::get('fruits/delete/{id}', [FruitController::class, 'destroy']);
+Route::get('/download-fruits',[FruitController::class, 'downloadPdf']);

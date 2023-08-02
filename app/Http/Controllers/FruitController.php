@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fruits;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class FruitController extends Controller
 {
@@ -47,5 +48,12 @@ class FruitController extends Controller
         $fruit=Fruits::where('id',$id)->first();
         $fruit->delete();
         return back()->withSuccess('Fruit Deleted');
+    }
+
+    public function downloadPdf(){
+        $fruits = Fruits::get();
+        $data['fruits'] = $fruits;
+        $pdf = \Pdf::loadView('pdf.order', $data);
+        return $pdf->stream();
     }
 }

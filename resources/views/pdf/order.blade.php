@@ -1,14 +1,4 @@
-@extends('layouts.app')
-@section('main')
-<div class="d-flex justify-content-between">
-  <h5>Product Details</h5>
-  <a href="fruits/create" class="btn btn-primary">New Product</a>
-</div>
-<div class="col-md-12 table-responsive mt-3">
-  <div class="py-2">
-    <a href="{{url('/download-fruits')}}" class="btn btn-primary">Download PDF</a>
-  </div>
-  <table class="table table-bordered">
+<table class="table table-bordered">
     <thead>
       <tr>
         <th>S.No</th>
@@ -28,6 +18,3 @@
       @endforeach
     </tbody>
   </table>
-</div>
-</div>
-@endsection
